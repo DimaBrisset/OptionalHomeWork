@@ -16,32 +16,24 @@ namespace OptionalHomeWork.Task1
             fractions2.CreativeNumber();
             Console.WriteLine(fractions2.ToString());
 
-            Console.WriteLine($"SUM: {Sum(fractions1, fractions2):0.####}");
-            Console.WriteLine($"Substraction: {Substraction(fractions1, fractions2):0.####}");
-            Console.WriteLine($"Multiplication: {Multiplication(fractions1, fractions2):0.####}");
-            Console.WriteLine($"HighNumber: {HighNumber(fractions1, fractions2):0.####}");
+            var union = new Fractions();
+
+            Console.WriteLine("Demonstration");
+            Console.WriteLine($"SUM:{union.Sum(fractions1, fractions2):0.####}");
+            Console.WriteLine($"Substraction:{union.Substraction(fractions1, fractions2):0.####}");
+            Console.WriteLine($"Multiplication:{union.Multiplication(fractions1, fractions2):0.####}");
+            Console.WriteLine($"HighNumber:{union.HighNumber(fractions1, fractions2):0.####}");
+
+
+
+
+
+
 
 
         }
 
-        static decimal Sum(Fractions a, Fractions b)
-        {
-            return a.CreativeNumber() + b.CreativeNumber();
-        }
 
-        static decimal Substraction(Fractions a, Fractions b)
-        {
-            return a.CreativeNumber() / b.CreativeNumber();
-        }
 
-        static decimal Multiplication(Fractions a, Fractions b)
-        {
-            return a.CreativeNumber() * b.CreativeNumber();
-        }
-
-        static decimal HighNumber(Fractions a, Fractions b)
-        {
-            return Math.Max(a.CreativeNumber(), b.CreativeNumber());
-        }
     }
 }

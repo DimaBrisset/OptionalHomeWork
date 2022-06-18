@@ -26,9 +26,30 @@ namespace OptionalHomeWork.Task1
         public decimal CreativeNumber()
         {
             string union = (_numberLong + "," + _numberInteger);
-            decimal IngeBorgaDapkunayte = Convert.ToDecimal(union);
-            return IngeBorgaDapkunayte;
+            decimal creativeNumber = Convert.ToDecimal(union);
+            return creativeNumber;
         }
+
+        public decimal Sum(Fractions a, Fractions b)
+        {
+            return a.CreativeNumber() + b.CreativeNumber();
+        }
+
+        public decimal Substraction(Fractions a, Fractions b)
+        {
+            return a.CreativeNumber() / b.CreativeNumber();
+        }
+
+        public decimal Multiplication(Fractions a, Fractions b)
+        {
+            return a.CreativeNumber() * b.CreativeNumber();
+        }
+
+        public decimal HighNumber(Fractions a, Fractions b)
+        {
+            return Math.Max(a.CreativeNumber(), b.CreativeNumber());
+        }
+
 
         public override string ToString()
         {

@@ -8,53 +8,40 @@ namespace OptionalHomeWork.Task2
         {
             Random random = new Random();
 
-
-            Money money1 = new Money(random.Next(-100, 100), RandomByte[100]);
-            money1.CreativeCardBalance();
+            Money money1 = new Money(random.Next(-100, 100), RandomByte());
+            money1.CreativeNumber();
             Console.WriteLine(money1.ToString());
 
-            Money money2 = new Money(random.Next(-100, 100), random.Next(1, 200));
-            money2.CreativeCardBalance();
+            Money money2 = new Money(random.Next(-100, 100), RandomByte());
+            money2.CreativeNumber();
             Console.WriteLine(money2.ToString());
 
-            Console.WriteLine($"SUM: {Sum(money1, money2):0.####}");
-            Console.WriteLine($"Substraction: {Substraction(money1, money2):0.####}");
-            Console.WriteLine($"Multiplication: {Multiplication(money1, money2):0.####}");
-            Console.WriteLine($"HighNumber: {HighNumber(money1, money2):0.####}");
+            var union = new Money();
 
-      
+            Console.WriteLine("Demonstration");
+            Console.WriteLine($"SUM:{union.Sum(money1, money2):0.####}");
+            Console.WriteLine($"Substraction:{union.Substraction(money1, money2):0.####}");
+            Console.WriteLine($"Multiplication:{union.Multiplication(money1, money2):0.####}");
+            Console.WriteLine($"HighNumber:{union.HighNumber(money1, money2):0.####}");
+
+            Console.WriteLine(RandomByte());
+
+
+
+
+
+
         }
-
-        static decimal Sum(Money a, Money b)
-        {
-            return a.CreativeCardBalance() + b.CreativeCardBalance();
-        }
-
-        static decimal Substraction(Money a, Money b)
-        {
-            return a.CreativeCardBalance() / b.CreativeCardBalance();
-        }
-
-        static decimal Multiplication(Money a, Money b)
-        {
-            return a.CreativeCardBalance() * b.CreativeCardBalance();
-        }
-
-        static decimal HighNumber(Money a, Money b)
-        {
-            return Math.Max(a.CreativeCardBalance(), b.CreativeCardBalance());
-        }
-
-        static byte[]  RandomByte()
+         public static byte RandomByte()
         {
             Random rnd = new Random();
-            Byte[] b = new Byte[];
+            Byte[] b = new Byte[10];
             rnd.NextBytes(b);
-
-            return b;
-
+            
+            return b[0];
         
         }
+
 
 
     }

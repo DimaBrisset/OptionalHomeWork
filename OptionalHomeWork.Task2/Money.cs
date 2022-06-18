@@ -2,7 +2,6 @@
 {
     internal class Money
     {
-
         private long _numberLong;
         private byte _numberByte;
 
@@ -18,17 +17,37 @@
             _numberByte = numberByte;
         }
 
-        public decimal CreativeCardBalance()
+        public decimal CreativeNumber()
         {
             string union = (_numberLong + "," + _numberByte);
-            decimal IngeBorgaDapkunayte = Convert.ToDecimal(union);
-            return IngeBorgaDapkunayte;
+            decimal creativeNumber = Convert.ToDecimal(union);
+            return creativeNumber;
         }
+
+        public decimal Sum(Money a, Money b)
+        {
+            return a.CreativeNumber() + b.CreativeNumber();
+        }
+
+        public decimal Substraction(Money a, Money b)
+        {
+            return a.CreativeNumber() / b.CreativeNumber();
+        }
+
+        public decimal Multiplication(Money a, Money b)
+        {
+            return a.CreativeNumber() * b.CreativeNumber();
+        }
+
+        public decimal HighNumber(Money a, Money b)
+        {
+            return Math.Max(a.CreativeNumber(), b.CreativeNumber());
+        }
+
 
         public override string ToString()
         {
-            return $" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeCardBalance()}\n ";
+            return $" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n ";
         }
-
     }
 }
