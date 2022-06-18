@@ -7,40 +7,41 @@ namespace OptionalHomeWork.Task2
         static void Main(string[] args)
         {
             Random random = new Random();
+            var firstNumber = random.Next(0, 1000000);
+            var secondNumber = ByteRandom();
 
-            Money money1 = new Money(random.Next(-100, 100), RandomByte());
+
+            Money money1 = new Money(firstNumber, secondNumber);
             money1.CreativeNumber();
-            Console.WriteLine(money1.ToString());
+            money1.Print();
 
-            Money money2 = new Money(random.Next(-100, 100), RandomByte());
+            Money money2 = new Money(firstNumber, secondNumber);
             money2.CreativeNumber();
-            Console.WriteLine(money2.ToString());
+            money2.Print();
 
-            var union = new Money();
 
-            Console.WriteLine("Demonstration");
-            Console.WriteLine($"SUM:{union.Sum(money1, money2):0.####}");
-            Console.WriteLine($"Substraction:{union.Substraction(money1, money2):0.####}");
-            Console.WriteLine($"Multiplication:{union.Multiplication(money1, money2):0.####}");
-            Console.WriteLine($"HighNumber:{union.HighNumber(money1, money2):0.####}");
+            Money money=new Money();
+            money = money1 + money2;
+            Console.WriteLine(money.ToString());
 
-            Console.WriteLine(RandomByte());
-
+           
+           
 
 
 
 
 
         }
-         public static byte RandomByte()
+        public static byte ByteRandom()
         {
             Random rnd = new Random();
             Byte[] b = new Byte[10];
             rnd.NextBytes(b);
-            
+
             return b[0];
-        
+
         }
+
 
 
 

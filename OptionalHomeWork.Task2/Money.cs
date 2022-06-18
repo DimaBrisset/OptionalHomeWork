@@ -4,6 +4,8 @@
     {
         private long _numberLong;
         private byte _numberByte;
+        private decimal _numberDecimal;
+        public decimal Value;
 
         public Money()
         {
@@ -16,6 +18,10 @@
             _numberLong = numberLong;
             _numberByte = numberByte;
         }
+        public Money(decimal numberDecimal)
+        {
+            _numberDecimal = numberDecimal;
+        }
 
         public decimal CreativeNumber()
         {
@@ -24,30 +30,30 @@
             return creativeNumber;
         }
 
-        public decimal Sum(Money a, Money b)
+        public static Money operator +(Money money1, Money money2)
         {
-            return a.CreativeNumber() + b.CreativeNumber();
+            return new Money { Value = money1.Value + money2.Value };
+        }
+        public static bool operator >(Money money1, Money money2)
+        {
+            return money1.Value > money2.Value;
+        }
+        public static bool operator <(Money money1, Money money2)
+        {
+            return money1.Value < money2.Value;
         }
 
-        public decimal Substraction(Money a, Money b)
+        public void Print()
         {
-            return a.CreativeNumber() / b.CreativeNumber();
+            Console.WriteLine( $" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n");
         }
-
-        public decimal Multiplication(Money a, Money b)
-        {
-            return a.CreativeNumber() * b.CreativeNumber();
-        }
-
-        public decimal HighNumber(Money a, Money b)
-        {
-            return Math.Max(a.CreativeNumber(), b.CreativeNumber());
-        }
-
 
         public override string ToString()
         {
-            return $" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n ";
+            return $"Sum{Sum}"
         }
+
+
+
     }
 }
