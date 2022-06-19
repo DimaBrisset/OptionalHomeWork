@@ -63,6 +63,5 @@
         {
             Console.WriteLine($" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n");
         }
-
     }
 }
