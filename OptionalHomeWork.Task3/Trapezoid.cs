@@ -2,7 +2,6 @@
 {
     internal class Trapezoid
     {
-
         private double _x1;
         private double _y1;
         private double _x2;
@@ -31,35 +30,28 @@
             _y3 = y3;
             _x4 = x4;
             _y4 = y4;
-
         }
 
         public double LongSideA()
         {
-
             _longSideA = Math.Sqrt((Math.Pow((_x4 - _x1), 2)) + Math.Pow((_y4 - _y1), 2));
             return _longSideA;
-
         }
+
         public double LongSideB()
         {
-
-
             _longSideB = Math.Sqrt((Math.Pow((_x3 - _x2), 2)) + Math.Pow((_y3 - _y2), 2));
             return _longSideB;
-
         }
 
         public double LongSideC()
         {
-
             _longSideC = Math.Sqrt((Math.Pow((_x2 - _x1), 2)) + Math.Pow((_y2 - _y1), 2));
             return _longSideC;
-
         }
+
         public double LongSideD()
         {
-
             _longSideD = Math.Sqrt((Math.Pow((_x4 - _x3), 2)) + Math.Pow((_y4 - _y3), 2));
             return _longSideD;
         }
@@ -72,20 +64,13 @@
             if (_isoscelesAC == _isoscelesBD)
                 return true;
             return false;
-
         }
-
-
 
 
         public double Height()
         {
-
             _height = 0.5 * (Math.Sqrt(4 * Math.Pow(_longSideC, 2) - Math.Pow(_longSideA - _longSideB, 2)));
             return _height;
-
-
-
         }
 
         public double Perimetr()
@@ -101,12 +86,11 @@
         }
 
 
-
         public void Print()
         {
-         
             Console.WriteLine($"Coordinates: A({_x1};{_y1}) B({_x2};{_y2}) C({_x3};{_y3}) D({_x4};{_y4})");
-            Console.WriteLine($"Long: AD({LongSideA():0.###})  BC:({LongSideB():0.###}) AB:({LongSideC():0.###}) CD: ({LongSideD():0.###})");
+            Console.WriteLine(
+                $"Long: AD({LongSideA():0.###})  BC:({LongSideB():0.###}) AB:({LongSideC():0.###}) CD: ({LongSideD():0.###})");
             Console.WriteLine($"Isosceles:{Isosceles():0.###}");
             Console.WriteLine();
             Console.WriteLine($"Diagonal: AC:({_isoscelesAC:0.###}) BD:({_isoscelesBD:0.###}) ");
@@ -114,9 +98,6 @@
             Console.WriteLine($"Perimetr:{Perimetr()}");
             Console.WriteLine($"Square:{Square()}");
             Console.WriteLine("____________________________");
-
         }
-
-
     }
 }
