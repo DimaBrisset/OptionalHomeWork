@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OptionalHomeWork.Task1
+﻿namespace OptionalHomeWork.Task1
 {
     internal class Program
     {
@@ -22,18 +20,8 @@ namespace OptionalHomeWork.Task1
             Console.WriteLine($"SUM:{union.Sum(fractions1, fractions2):0.####}");
             Console.WriteLine($"Substraction:{union.Substraction(fractions1, fractions2):0.####}");
             Console.WriteLine($"Multiplication:{union.Multiplication(fractions1, fractions2):0.####}");
+            Console.WriteLine($"Division:{union.Division(fractions1, fractions2):0.####}");
             Console.WriteLine($"HighNumber:{union.HighNumber(fractions1, fractions2):0.####}");
-
-
-
-
-
-
-
-
         }
-
-
-
     }
 }

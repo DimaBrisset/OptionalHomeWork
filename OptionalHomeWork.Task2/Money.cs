@@ -2,10 +2,8 @@
 {
     internal class Money
     {
-        private long _numberLong;
-        private byte _numberByte;
-        private decimal _numberDecimal;
-        public decimal Value;
+        public long _numberLong { get; set; }
+        public byte _numberByte { get; set; }
 
         public Money()
         {
@@ -18,10 +16,6 @@
             _numberLong = numberLong;
             _numberByte = numberByte;
         }
-        public Money(decimal numberDecimal)
-        {
-            _numberDecimal = numberDecimal;
-        }
 
         public decimal CreativeNumber()
         {
@@ -30,30 +24,45 @@
             return creativeNumber;
         }
 
-        public static Money operator +(Money money1, Money money2)
+        public decimal Sum(Money a, Money b)
         {
-            return new Money { Value = money1.Value + money2.Value };
+            return a.CreativeNumber() + b.CreativeNumber();
         }
-        public static bool operator >(Money money1, Money money2)
+
+        public decimal Substraction(Money a, Money b)
         {
-            return money1.Value > money2.Value;
+            return a.CreativeNumber() - b.CreativeNumber();
         }
-        public static bool operator <(Money money1, Money money2)
+
+        public decimal Multiplication(Money a, Money b)
         {
-            return money1.Value < money2.Value;
+            return a.CreativeNumber() * b.CreativeNumber();
+        }
+
+        public decimal Multiplication(Money a, Money b, decimal fractional)
+        {
+            return a.CreativeNumber() * b.CreativeNumber() * fractional;
+        }
+
+        public decimal Division(Money a, Money b)
+        {
+            return a.CreativeNumber() / b.CreativeNumber();
+        }
+
+        public decimal Division(Money a, Money b, decimal fractional)
+        {
+            return a.CreativeNumber() / b.CreativeNumber() * fractional;
+        }
+
+        public decimal HighNumber(Money a, Money b)
+        {
+            return Math.Max(a.CreativeNumber(), b.CreativeNumber());
         }
 
         public void Print()
         {
-            Console.WriteLine( $" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n");
+            Console.WriteLine($" FirstNumber: {_numberLong}\n SecondNumber: {_numberByte}\n Union {CreativeNumber()}\n");
         }
-
-        public override string ToString()
-        {
-            return $"Sum{Sum}"
-        }
-
-
 
     }
 }

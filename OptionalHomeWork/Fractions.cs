@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OptionalHomeWork.Task1
+﻿namespace OptionalHomeWork.Task1
 {
     internal class Fractions
     {
-        private long _numberLong;
-        private int _numberInteger;
+        public long _numberLong { get; set; }
+        public int _numberInteger { get; set; }
 
         public Fractions()
         {
@@ -37,7 +31,7 @@ namespace OptionalHomeWork.Task1
 
         public decimal Substraction(Fractions a, Fractions b)
         {
-            return a.CreativeNumber() / b.CreativeNumber();
+            return a.CreativeNumber() - b.CreativeNumber();
         }
 
         public decimal Multiplication(Fractions a, Fractions b)
@@ -45,11 +39,15 @@ namespace OptionalHomeWork.Task1
             return a.CreativeNumber() * b.CreativeNumber();
         }
 
+        public decimal Division(Fractions a, Fractions b)
+        {
+            return a.CreativeNumber() / b.CreativeNumber();
+        }
+
         public decimal HighNumber(Fractions a, Fractions b)
         {
             return Math.Max(a.CreativeNumber(), b.CreativeNumber());
         }
-
 
         public override string ToString()
         {
